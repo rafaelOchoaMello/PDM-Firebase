@@ -1,0 +1,76 @@
+div.cardContainer{
+    width: 180px;
+    height: 260px;
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+    background-color: #fff;
+    color: #fff;
+
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+    overflow: hidden;
+}
+
+div.cardContainer:hover{
+    box-shadow: rgba(0, 0, 0, 0.384) 0px 3px 8px;
+    cursor: pointer;
+}
+
+div.cardHeader, div.cardHeader > p{
+    width: 100%;
+    height: 30px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    
+    background-color: rgb(39, 48, 60);
+    box-sizing: border-box;
+
+    font-size: 16px;
+}
+
+div.cardBody{
+    margin-top: 15px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background:#fff;
+}
+
+div.cardBody > p{
+    margin-top: 3px;
+}
+
+div.cardBody > p, div.cardBody > p > strong{
+    background-color: #fff;
+    color: black;
+}
+
+div.cardImage{
+    margin-top: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    width: 100px;
+    height: 120px;
+
+    background-color: #fff;
+}
+
+div.cardImage > img {
+    align-self: center;
+    min-width: 50px;
+    max-width: 100px;
+    max-height: 120px;
+    background-color: #fff;
+}

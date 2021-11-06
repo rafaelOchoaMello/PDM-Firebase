@@ -5,3 +5,9 @@ div.GenericBody{
     width: 100%;
     background-image: url("../../images/tic-tac-toe.png");
 }
+
+div.contentDisplay{
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100vh;
+}

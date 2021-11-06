@@ -1,6 +1,5 @@
 import React from 'react'
 import './SideMenu.css'
-import chartImage from '../../images/chartImg.png'
 
 const SideMenu = () => {
     return (
@@ -14,9 +13,11 @@ const SideMenu = () => {
                     <p>Listar</p>
                 </div>
             </div>
-            <div className="chartBtn" title="Estatíticas"/>            
+            <div className="chartBtn" title="Estatíticas"
+                onClick={() => { alert('Estatísticas') }}
+            />
         </div>
     )
 }
 
-export default SideMenu;
+export default SideMenu;    
