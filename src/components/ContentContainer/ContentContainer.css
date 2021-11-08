@@ -8,6 +8,7 @@ div.ContentContainer{
 }
 
 div.insideContent{
-    background-color: chartreuse;
+    display: flex;
+    flex-flow: row wrap;
     width: 100%;
 }

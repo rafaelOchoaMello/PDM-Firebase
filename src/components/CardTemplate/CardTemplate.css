@@ -1,6 +1,6 @@
 div.cardContainer{
     width: 180px;
-    height: 260px;
+    height: 300px;
 
     display: flex;
     flex-flow: column wrap;
@@ -15,6 +15,7 @@ div.cardContainer{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
     overflow: hidden;
+    margin: 5px 7px 5px 7px;
 }
 
 div.cardContainer:hover{
@@ -71,6 +72,51 @@ div.cardImage > img {
     align-self: center;
     min-width: 50px;
     max-width: 100px;
-    max-height: 120px;
+    max-height: 150px;
     background-color: #fff;
+}
+
+div.cardBody > p.rarityTitle{
+    margin-top:10px;
+    font-size: 12px;
+    font-weight: bold;
+    color:rgb(39, 48, 60);
+}
+div.cardBody > p.priceStyle{
+    margin-top: 15px;
+    color:blue;
+}
+
+/* Options container area */
+div.optContainer{
+    width: 50px;
+    height: 40px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    background-color: #fff;
+    color: #fff;
+
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+    overflow: hidden;
+    margin: 5px 7px 5px 7px;
+}
+
+div.optContainer:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.384) 0px 3px 8px;
+}
+
+
+div.rmvIcon {
+    background-image: url('../../images/rmvIcon.png') ;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: auto;
 }
