@@ -1,15 +1,12 @@
 import React from 'react'
 import './ContentContainer.css'
-import CardTemplate from '../CardTemplate'
+import RouterContainer from '../RouterContainer/RouterContainer'
 
-const ContentContainer= ({ children }) => {
+const ContentContainer = ({ children }) => {
     return (
         <div className="ContentContainer">
             <div className="insideContent">
-                <CardTemplate />
-                <CardTemplate />
-                <CardTemplate />
-                <CardTemplate />
+                <RouterContainer />
             </div>
         </div>
     )

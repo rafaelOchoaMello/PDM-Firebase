@@ -10,8 +10,7 @@ const GenericBody = ({ children }) => {
             <Header />
             <div className="contentDisplay">
                 <SideMenu />
-                <ContentContainer />
-                {children}
+                <ContentContainer />               
             </div>
         </div>
     )
