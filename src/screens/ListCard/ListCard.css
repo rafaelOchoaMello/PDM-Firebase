@@ -1,3 +1,4 @@
-h1.listTitle{
-    color:purple;
+div.listContainer{
+    display: flex;
+    flex-flow: row wrap;
 }

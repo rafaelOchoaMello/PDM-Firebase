@@ -16,7 +16,7 @@ div.optButtons{
     margin:10px 0px 5px 0px;
 }
 
-div.optButtons > a{
+div.optButtons > p.linkStyle{
     text-decoration: none;
     color:rgb(211, 211, 211);
 }

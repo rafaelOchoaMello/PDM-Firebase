@@ -9,10 +9,10 @@ const SideMenu = () => {
         <div className="SideMenu">
             <div>
                 <div className="optButtons" style={{ marginTop: '40px' }} onClick={() => { navigate('/form') }}>
-                    <p>Registrar</p>
+                    <p className='linkStyle'>Registrar</p>
                 </div>
                 <div className="optButtons" onClick={() => { navigate('/list') }}>
-                    <p>Listar</p>
+                    <p className='linkStyle'>Listar</p>
                 </div>
             </div>
             <div className="chartBtn" title="Estatíticas" onClick={() => { navigate('/data') }}>

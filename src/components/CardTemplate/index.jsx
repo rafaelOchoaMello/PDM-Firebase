@@ -1,7 +1,9 @@
 import React from "react"
 import './CardTemplate.css'
 
-const CardTemplate = () => {
+import editIcon from '../../images/editIcon.png'
+
+const CardTemplate = ({props}) => {
     // function moneyFormat(value) {
     //     return Intl.NumberFormat('pt-br', {
     //         style: 'currency',
@@ -10,8 +12,6 @@ const CardTemplate = () => {
     // }
 
     return (
-
-
         <>
             <div style={{ display: "flex", flexFlow: "column" }}>
                 <div className="cardContainer">
@@ -32,8 +32,7 @@ const CardTemplate = () => {
                 <div style={{ display: "flex", flexFlow: "row" }}>
                     <div className="optContainer rmvIcon" onClick={() => { alert('rmvIcon') }}>
                     </div>
-                    <div className="optContainer">
-                    </div>
+                    <div className="optContainer editIcon" />
                 </div>
             </div>
         </>

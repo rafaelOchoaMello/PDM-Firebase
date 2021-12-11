@@ -1,12 +1,25 @@
 import React from "react";
 import './ListCard.css';
 
+import CardTemplate from "../../components/CardTemplate";
+
 const ListCard = () => {
     return (
         <>
-            <h1 className="listTitle">
-                Listagem de cartas
-            </h1>
+          <div className="listContainer">
+              <CardTemplate></CardTemplate>
+              <CardTemplate></CardTemplate>
+              <CardTemplate></CardTemplate>
+              <CardTemplate></CardTemplate>
+              <CardTemplate></CardTemplate>
+              <CardTemplate></CardTemplate>
+              <CardTemplate></CardTemplate>
+              <CardTemplate></CardTemplate>
+              <CardTemplate></CardTemplate>
+              <CardTemplate></CardTemplate>
+              <CardTemplate></CardTemplate>
+              <CardTemplate></CardTemplate>
+          </div>
         </>
     );
 }
