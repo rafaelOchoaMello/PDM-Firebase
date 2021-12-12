@@ -1,15 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import './CardTemplate.css'
 
-import editIcon from '../../images/editIcon.png'
+import EditModal from "../EditModal";
 
-const CardTemplate = ({props}) => {
-    // function moneyFormat(value) {
-    //     return Intl.NumberFormat('pt-br', {
-    //         style: 'currency',
-    //         currency: 'BRL',
-    //     }).format(value)
-    // }
+const CardTemplate = ({ props }) => {
+    const [editModal, setEditModal] = useState(false);
 
     return (
         <>
@@ -20,7 +15,6 @@ const CardTemplate = ({props}) => {
                     </div>
                     <div className="cardImage">
                         <img src="https://www.w3schools.com/bootstrap4/img_avatar6.png" alt="" srcset="" />
-
                     </div>
                     <div className="cardBody">
                         <p>Jogo</p>
@@ -32,11 +26,12 @@ const CardTemplate = ({props}) => {
                 <div style={{ display: "flex", flexFlow: "row" }}>
                     <div className="optContainer rmvIcon" onClick={() => { alert('rmvIcon') }}>
                     </div>
-                    <div className="optContainer editIcon" />
+                    <div className="optContainer editIcon" onClick={() => { setEditModal(true) }}/>
                 </div>
             </div>
+            {editModal ? <EditModal onClose={() => setEditModal(false)} /> : null}
         </>
-    )
+    );
 }
 
 export default CardTemplate
