@@ -1,0 +1,54 @@
+div.findContainer{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: calc(100vw - 580px);
+    height: 75px;
+    margin-left: 400px;
+    background-color: rgba(2, 3, 28, 0.864);
+
+    border-radius: 20px 0px 0px 20px;     
+}
+
+div.findContainer > form {
+    margin-left: 150px;
+}
+
+div.findContainer > form > input {
+    width: 350px;
+    height: 25px;
+}
+
+
+div.findContainer > form > label {
+    color: honeydew;
+}
+
+button.findButton{
+    margin-bottom: 15px;
+    margin-left: 50px;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 130px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 12px 14px 18px;
+    color: #d0d0d0;
+    box-shadow: inset 0 0 0 1px #616467;
+    background-color: transparent;
+    height: 40px;
+}
+button.findButton:hover{
+    color: #616467;
+    background-color: #fff;
+}

@@ -1,0 +1,13 @@
+div.EditModalContainer > div.RemoveModalPanel{
+    width: 500px;
+    height: 180px;
+    overflow-y: scroll;
+
+    z-index: 1;
+    position: absolute;
+
+    border: 2px solid rgb(39, 48, 60);
+    box-sizing: border-box;
+
+    background-color: rgb(243, 243, 243);    
+}

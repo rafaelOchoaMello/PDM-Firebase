@@ -2,9 +2,11 @@ import React, { useState } from "react"
 import './CardTemplate.css'
 
 import EditModal from "../EditModal";
+import RemoveModal from "../RemoveModal";
 
 const CardTemplate = ({ props }) => {
     const [editModal, setEditModal] = useState(false);
+    const [rmvModal, setRmvModal] = useState(null);
 
     return (
         <>
@@ -24,12 +26,13 @@ const CardTemplate = ({ props }) => {
                     </div>
                 </div>
                 <div style={{ display: "flex", flexFlow: "row" }}>
-                    <div className="optContainer rmvIcon" onClick={() => { alert('rmvIcon') }}>
+                    <div className="optContainer rmvIcon" onClick={() => { setRmvModal(true) }}>
                     </div>
                     <div className="optContainer editIcon" onClick={() => { setEditModal(true) }}/>
                 </div>
             </div>
             {editModal ? <EditModal onClose={() => setEditModal(false)} /> : null}
+            {rmvModal ? <RemoveModal onClose={() => setRmvModal(false)} /> : null}
         </>
     );
 }
