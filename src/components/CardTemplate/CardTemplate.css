@@ -39,7 +39,7 @@ div.cardHeader, div.cardHeader > p{
 }
 
 div.cardBody{
-    margin-top: 15px;
+    margin-top: 30px;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -83,8 +83,9 @@ div.cardBody > p.rarityTitle{
     color:rgb(39, 48, 60);
 }
 div.cardBody > p.priceStyle{
-    margin-top: 15px;
-    color:blue;
+    margin-top: 10px;
+    font-weight: bold;
+    color: rgb(104, 104, 104);
 }
 
 /* Options container area */
