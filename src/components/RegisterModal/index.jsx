@@ -46,6 +46,7 @@ const RegisterModal = (props) => {
                                     <option value="" selected disabled hidden>-</option>
                                     <option value="pokemon">Pokémon</option>
                                     <option value="yugioh">Yu-Gi-Oh</option>
+                                    <option value="magic">Magic</option>
                                 </select>
                                 <br />
                                 <label htmlFor="newRarity">Raridade:</label>
