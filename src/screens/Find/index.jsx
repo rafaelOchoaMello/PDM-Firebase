@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { collection, query, where } from "firebase/firestore/lite";
+import { db } from '../../dbConnection';
+
 import './Find.css';
 
 const Find = () => {
