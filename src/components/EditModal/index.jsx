@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { doc, updateDoc } from "firebase/firestore/lite";
+import { db } from "../../dbConnection";
 import './EditModal.css';
 
 
@@ -9,12 +11,22 @@ const EditModal = (props) => {
     const [newValue, setNewValue] = useState(null);
     const [newImageLink, setNewImageLink] = useState(null);
 
-    const showData = () => {
-        console.log(newCardTitle);
-        console.log(newGame);
-        console.log(newRarity);
-        console.log(newValue);
-        console.log(newImageLink);
+    const onSubmit = async () => {
+        if (newImageLink && newCardTitle && newGame && newRarity && newValue) {
+            const newCardData = {
+                'imagem': newImageLink,
+                'jogo': newGame,
+                'nome': newCardTitle,
+                'raridade': newRarity,
+                'valor': newValue
+            }
+            const newAddedData = await updateDoc(doc(db, `cartas/${props.id}`), newCardData);
+            console.log(newAddedData);
+            window.location.reload(false);            
+        }
+        else {
+            alert('Dados inválidos')
+        }
     }
 
     return (
@@ -23,8 +35,7 @@ const EditModal = (props) => {
                 <div className="EditModalPanel">
                     <div className="EditModalContent">
                         <div className="upperContent">
-                            <div className="imageCardContainer">
-                            </div>
+                            <img className="imageCardContainer" src={props.imgUrl} alt="" />
                             <form>
                                 <label htmlFor="newCardTitle">Título:</label>
                                 <br />
@@ -36,7 +47,7 @@ const EditModal = (props) => {
                                         e.target.value.length > 0
                                             ? setNewCardTitle(e.target.value)
                                             : setNewCardTitle(null)
-                                    }}                                    
+                                    }}
                                 />
                                 <br />
                                 <label htmlFor="newGame">Jogo:</label>
@@ -47,7 +58,7 @@ const EditModal = (props) => {
                                     onChange={(e) => { setNewGame(e.target.value) }}
                                 >
                                     <option value="" selected disabled hidden>-</option>
-                                    <option  value="pokemon">Pokémon</option>
+                                    <option value="pokemon">Pokémon</option>
                                     <option value="yugioh">Yu-Gi-Oh</option>
                                     <option value="magic">Magic</option>
                                 </select>
@@ -77,8 +88,8 @@ const EditModal = (props) => {
                                 <input type="number" name="newValue" id="newValue" min='0.50'
                                     onChange={(e) => {
                                         e.target.value.length > 0
-                                        ? setNewValue(e.target.value)
-                                        : setNewValue(null)
+                                            ? setNewValue(e.target.value)
+                                            : setNewValue(null)
                                     }}
                                 />
                                 <br />
@@ -97,7 +108,7 @@ const EditModal = (props) => {
                             </form>
                         </div>
                         <div className="EditModalButtonsContainer">
-                            <button onClick={() => { showData() }} className='editButton'> Salvar </button>
+                            <button onClick={() => { onSubmit() }} className='editButton'> Salvar </button>
                             <button onClick={props.onClose} className='editButton'> Cancelar </button>
                         </div>
                     </div>

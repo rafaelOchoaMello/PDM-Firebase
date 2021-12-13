@@ -42,8 +42,8 @@ const CardTemplate = (props) => {
                     <div className="optContainer editIcon" onClick={() => { setEditModal(true) }}/>
                 </div>
             </div>
-            {editModal ? <EditModal onClose={() => setEditModal(false)} /> : null}
-            {rmvModal ? <RemoveModal onClose={() => setRmvModal(false)} /> : null}
+            {editModal ? <EditModal onClose={() => setEditModal(false)} imgUrl={props.data.imagem}  id={props.data.id}/> : null}
+            {rmvModal ? <RemoveModal onClose={() => setRmvModal(false)} id={props.data.id}/> : null}
         </>
     );
 }

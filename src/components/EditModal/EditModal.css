@@ -15,7 +15,7 @@ div.EditModalContainer{
 
 div.EditModalPanel{
     width: 750px;
-    height: 370px;
+    height: 430px;
     overflow-y: scroll;
 
     z-index: 1;
@@ -60,10 +60,9 @@ div.upperContent{
     width: 100%;
 }
 
-div.imageCardContainer{
-    width: 200px;
-    height: 250px;
-    border:1px solid blue;
+img.imageCardContainer{
+    width: 250px;
+    height: 320px;
 }
 
 input,select{

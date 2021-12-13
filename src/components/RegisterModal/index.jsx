@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { collection, addDoc } from "firebase/firestore/lite";
+import { db } from '../../dbConnection';
+
 import './RegisterModal.css';
 
 const RegisterModal = (props) => {
@@ -8,13 +11,31 @@ const RegisterModal = (props) => {
     const [newValue, setNewValue] = useState(null);
     const [newImageLink, setNewImageLink] = useState(null);
 
-    const showData = () => {
-        console.log(newCardTitle);
-        console.log(newGame);
-        console.log(newRarity);
-        console.log(newValue);
-        console.log(newImageLink);
+    const onSubmit = async () => {
+        if (newImageLink && newCardTitle && newGame && newRarity && newValue) {
+            const newCardData = {
+                'imagem': newImageLink,
+                'jogo': newGame,
+                'nome': newCardTitle,
+                'raridade': newRarity,
+                'valor': newValue
+            }
+            const newAddedData = await addDoc(collection(db, "cartas"), newCardData);
+            console.log(newAddedData);
+            window.location.reload(false);            
+        }
+        else {
+            alert('Dados inválidos')
+        }
     }
+
+    // const showData = () => {
+    //     console.log(newCardTitle);
+    //     console.log(newGame);
+    //     console.log(newRarity);
+    //     console.log(newValue);
+    //     console.log(newImageLink);
+    // }
 
     return (
         <>
@@ -22,7 +43,7 @@ const RegisterModal = (props) => {
                 <div className="RegisterModalPanel">
                     <div className="EditModalContent">
                         <div className="upperContent">
-                            <form>
+                            <form id='cardForm'>
                                 <label htmlFor="newCardTitle">Título:</label>
                                 <br />
                                 <input
@@ -94,7 +115,7 @@ const RegisterModal = (props) => {
                             </form>
                         </div>
                         <div className="EditModalButtonsContainer">
-                            <button onClick={() => { showData() }} className='editButton'> Registrar </button>
+                            <button onClick={() => { onSubmit() }} className='editButton'> Registrar </button>
                             <button onClick={props.onClose} className='editButton'> Cancelar </button>
                         </div>
                     </div>
